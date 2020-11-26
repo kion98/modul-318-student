@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1E50E986-2EEB-4ACC-8143-8A476AEC0BC4}</ProjectGuid>
+    <ProjectGuid>{0E66003E-60B0-47ED-8D38-8B58FEC82527}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>TransportApp_Projekt</RootNamespace>
-    <AssemblyName>TransportApp_Projekt</AssemblyName>
+    <RootNamespace>TransportApp_projekt</RootNamespace>
+    <AssemblyName>TransportApp_projekt</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -75,12 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\src\SwissTransport\SwissTransport.csproj">
-      <Project>{d0262178-a48f-4de0-807b-e76b63e39421}</Project>
-      <Name>SwissTransport</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
