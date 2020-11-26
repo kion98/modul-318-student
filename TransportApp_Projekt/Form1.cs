@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SwissTransport;
 
 namespace TransportApp_projekt
 {
@@ -16,5 +17,12 @@ namespace TransportApp_projekt
 		{
 			InitializeComponent();
 		}
+
+		private void Form1_Load(object sender, EventArgs e)
+		{
+			ITransport transport = new Transport();
+		}
+
+		
 	}
 }
