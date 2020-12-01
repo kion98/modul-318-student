@@ -101,6 +101,7 @@ namespace TransportApp_projekt
 			// 
 			// conectionsView
 			// 
+			this.conectionsView.AllowColumnReorder = true;
 			this.conectionsView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -138,7 +139,6 @@ namespace TransportApp_projekt
 			// 
 			// departure_columnHeader
 			// 
-			this.departure_columnHeader.DisplayIndex = 4;
 			this.departure_columnHeader.Text = "Abfahrt";
 			// 
 			// platform_columnHeader

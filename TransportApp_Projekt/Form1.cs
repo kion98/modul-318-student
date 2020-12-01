@@ -44,12 +44,18 @@ namespace TransportApp_projekt
 				
 				string von = connection.From.Station.Name;
 				string nach = connection.To.Station.Name;
-				string dauer =TimeSpan.Parse
+				string dauer = TimeSpan.Parse
 					(
 					connection.Duration.Substring(3)
 					).TotalMinutes.ToString();
-				string abfahrt = connection.From.Departure;
-				string ankunft = connection.To.Arrival;
+				string abfahrt = DateTime.Parse
+					(
+					connection.From.Departure
+					).ToShortTimeString();
+				string ankunft = DateTime.Parse
+					(
+					connection.To.Arrival
+					).ToShortTimeString();
 				string gleiss = connection.From.Platform;
 
 				ListViewItem item = new ListViewItem(von);
