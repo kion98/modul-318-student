@@ -31,36 +31,41 @@ namespace TransportApp_projekt
 		{
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.verbindungenTab = new System.Windows.Forms.TabPage();
-			this.searchBtn = new System.Windows.Forms.Button();
-			this.nach_Label = new System.Windows.Forms.Label();
-			this.von_Label = new System.Windows.Forms.Label();
-			this.nach_TextBox = new System.Windows.Forms.TextBox();
-			this.von_TextBox = new System.Windows.Forms.TextBox();
-			this.stationenTab = new System.Windows.Forms.TabPage();
-			this.dataGridView2 = new System.Windows.Forms.DataGridView();
-			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.button1 = new System.Windows.Forms.Button();
-			this.label2 = new System.Windows.Forms.Label();
-			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.verlaufTab = new System.Windows.Forms.TabPage();
-			this.dataGridView3 = new System.Windows.Forms.DataGridView();
-			this.datetimeClm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.listView1 = new System.Windows.Forms.ListView();
+			this.conectionsView = new System.Windows.Forms.ListView();
 			this.von_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.Nach_columnsHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.duration_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.arrival_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.departure_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.platform_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.searchBtn = new System.Windows.Forms.Button();
+			this.nach_Label = new System.Windows.Forms.Label();
+			this.von_Label = new System.Windows.Forms.Label();
+			this.nach_TextBox = new System.Windows.Forms.TextBox();
+			this.von_TextBox = new System.Windows.Forms.TextBox();
+			this.stationenTab = new System.Windows.Forms.TabPage();
+			this.listView2 = new System.Windows.Forms.ListView();
+			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.button1 = new System.Windows.Forms.Button();
+			this.label2 = new System.Windows.Forms.Label();
+			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.verlaufTab = new System.Windows.Forms.TabPage();
+			this.listView3 = new System.Windows.Forms.ListView();
+			this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.tabControl1.SuspendLayout();
 			this.verbindungenTab.SuspendLayout();
 			this.stationenTab.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
 			this.verlaufTab.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tabControl1
@@ -79,7 +84,7 @@ namespace TransportApp_projekt
 			// 
 			// verbindungenTab
 			// 
-			this.verbindungenTab.Controls.Add(this.listView1);
+			this.verbindungenTab.Controls.Add(this.conectionsView);
 			this.verbindungenTab.Controls.Add(this.searchBtn);
 			this.verbindungenTab.Controls.Add(this.nach_Label);
 			this.verbindungenTab.Controls.Add(this.von_Label);
@@ -93,6 +98,52 @@ namespace TransportApp_projekt
 			this.verbindungenTab.TabIndex = 0;
 			this.verbindungenTab.Text = "Verbindungen";
 			this.verbindungenTab.UseVisualStyleBackColor = true;
+			// 
+			// conectionsView
+			// 
+			this.conectionsView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.conectionsView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.von_columnHeader,
+            this.Nach_columnsHeader,
+            this.duration_columnHeader,
+            this.departure_columnHeader,
+            this.arrival_columnHeader,
+            this.platform_columnHeader});
+			this.conectionsView.Location = new System.Drawing.Point(8, 152);
+			this.conectionsView.Name = "conectionsView";
+			this.conectionsView.Size = new System.Drawing.Size(405, 264);
+			this.conectionsView.TabIndex = 5;
+			this.conectionsView.UseCompatibleStateImageBehavior = false;
+			this.conectionsView.View = System.Windows.Forms.View.Details;
+			this.conectionsView.SelectedIndexChanged += new System.EventHandler(this.conectionsView_SelectedIndexChanged);
+			// 
+			// von_columnHeader
+			// 
+			this.von_columnHeader.Text = "Von";
+			// 
+			// Nach_columnsHeader
+			// 
+			this.Nach_columnsHeader.Text = "Nach";
+			// 
+			// duration_columnHeader
+			// 
+			this.duration_columnHeader.Text = "Dauer";
+			// 
+			// arrival_columnHeader
+			// 
+			this.arrival_columnHeader.DisplayIndex = 3;
+			this.arrival_columnHeader.Text = "Ankunft";
+			// 
+			// departure_columnHeader
+			// 
+			this.departure_columnHeader.DisplayIndex = 4;
+			this.departure_columnHeader.Text = "Abfahrt";
+			// 
+			// platform_columnHeader
+			// 
+			this.platform_columnHeader.Text = "Gleiss";
 			// 
 			// searchBtn
 			// 
@@ -138,7 +189,7 @@ namespace TransportApp_projekt
 			// 
 			// stationenTab
 			// 
-			this.stationenTab.Controls.Add(this.dataGridView2);
+			this.stationenTab.Controls.Add(this.listView2);
 			this.stationenTab.Controls.Add(this.button1);
 			this.stationenTab.Controls.Add(this.label2);
 			this.stationenTab.Controls.Add(this.textBox2);
@@ -150,27 +201,45 @@ namespace TransportApp_projekt
 			this.stationenTab.Text = "Stationen";
 			this.stationenTab.UseVisualStyleBackColor = true;
 			// 
-			// dataGridView2
+			// listView2
 			// 
-			this.dataGridView2.AllowUserToOrderColumns = true;
-			this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
-			this.dataGridView2.Location = new System.Drawing.Point(63, 88);
-			this.dataGridView2.Name = "dataGridView2";
-			this.dataGridView2.Size = new System.Drawing.Size(291, 150);
-			this.dataGridView2.TabIndex = 11;
+			this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
+			this.listView2.Location = new System.Drawing.Point(8, 164);
+			this.listView2.Name = "listView2";
+			this.listView2.Size = new System.Drawing.Size(405, 97);
+			this.listView2.TabIndex = 12;
+			this.listView2.UseCompatibleStateImageBehavior = false;
+			this.listView2.View = System.Windows.Forms.View.Details;
 			// 
-			// dataGridViewTextBoxColumn1
+			// columnHeader1
 			// 
-			this.dataGridViewTextBoxColumn1.HeaderText = "Von-Nach";
-			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+			this.columnHeader1.Text = "Von";
 			// 
-			// dataGridViewTextBoxColumn2
+			// columnHeader2
 			// 
-			this.dataGridViewTextBoxColumn2.HeaderText = "Zeit";
-			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+			this.columnHeader2.Text = "Nach";
+			// 
+			// columnHeader3
+			// 
+			this.columnHeader3.Text = "Dauer";
+			// 
+			// columnHeader4
+			// 
+			this.columnHeader4.Text = "Ankunft";
+			// 
+			// columnHeader5
+			// 
+			this.columnHeader5.Text = "Abfahrt";
+			// 
+			// columnHeader6
+			// 
+			this.columnHeader6.Text = "Gleiss";
 			// 
 			// button1
 			// 
@@ -199,7 +268,7 @@ namespace TransportApp_projekt
 			// 
 			// verlaufTab
 			// 
-			this.verlaufTab.Controls.Add(this.dataGridView3);
+			this.verlaufTab.Controls.Add(this.listView3);
 			this.verlaufTab.Location = new System.Drawing.Point(4, 22);
 			this.verlaufTab.Name = "verlaufTab";
 			this.verlaufTab.Padding = new System.Windows.Forms.Padding(3);
@@ -208,79 +277,45 @@ namespace TransportApp_projekt
 			this.verlaufTab.Text = "Verlauf";
 			this.verlaufTab.UseVisualStyleBackColor = true;
 			// 
-			// dataGridView3
+			// listView3
 			// 
-			this.dataGridView3.AllowUserToAddRows = false;
-			this.dataGridView3.AllowUserToDeleteRows = false;
-			this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.datetimeClm,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-			this.dataGridView3.Location = new System.Drawing.Point(34, 138);
-			this.dataGridView3.Name = "dataGridView3";
-			this.dataGridView3.ReadOnly = true;
-			this.dataGridView3.Size = new System.Drawing.Size(345, 150);
-			this.dataGridView3.TabIndex = 6;
-			this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+			this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9,
+            this.columnHeader10,
+            this.columnHeader11,
+            this.columnHeader12});
+			this.listView3.Location = new System.Drawing.Point(6, 51);
+			this.listView3.Name = "listView3";
+			this.listView3.Size = new System.Drawing.Size(405, 97);
+			this.listView3.TabIndex = 6;
+			this.listView3.UseCompatibleStateImageBehavior = false;
+			this.listView3.View = System.Windows.Forms.View.Details;
 			// 
-			// datetimeClm
+			// columnHeader7
 			// 
-			this.datetimeClm.HeaderText = "Gesucht";
-			this.datetimeClm.Name = "datetimeClm";
-			this.datetimeClm.ReadOnly = true;
+			this.columnHeader7.Text = "Von";
 			// 
-			// dataGridViewTextBoxColumn3
+			// columnHeader8
 			// 
-			this.dataGridViewTextBoxColumn3.HeaderText = "Von-Nach";
-			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-			this.dataGridViewTextBoxColumn3.ReadOnly = true;
+			this.columnHeader8.Text = "Nach";
 			// 
-			// dataGridViewTextBoxColumn4
+			// columnHeader9
 			// 
-			this.dataGridViewTextBoxColumn4.HeaderText = "Zeit";
-			this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-			this.dataGridViewTextBoxColumn4.ReadOnly = true;
+			this.columnHeader9.Text = "Dauer";
 			// 
-			// listView1
+			// columnHeader10
 			// 
-			this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.von_columnHeader,
-            this.Nach_columnsHeader,
-            this.duration_columnHeader,
-            this.arrival_columnHeader,
-            this.departure_columnHeader,
-            this.platform_columnHeader});
-			this.listView1.Location = new System.Drawing.Point(8, 150);
-			this.listView1.Name = "listView1";
-			this.listView1.Size = new System.Drawing.Size(405, 97);
-			this.listView1.TabIndex = 5;
-			this.listView1.UseCompatibleStateImageBehavior = false;
-			this.listView1.View = System.Windows.Forms.View.Details;
+			this.columnHeader10.Text = "Ankunft";
 			// 
-			// von_columnHeader
+			// columnHeader11
 			// 
-			this.von_columnHeader.Text = "Von";
+			this.columnHeader11.Text = "Abfahrt";
 			// 
-			// Nach_columnsHeader
+			// columnHeader12
 			// 
-			this.Nach_columnsHeader.Text = "Nach";
-			// 
-			// duration_columnHeader
-			// 
-			this.duration_columnHeader.Text = "Dauer";
-			// 
-			// arrival_columnHeader
-			// 
-			this.arrival_columnHeader.Text = "Ankunft";
-			// 
-			// departure_columnHeader
-			// 
-			this.departure_columnHeader.Text = "Abfahrt";
-			// 
-			// platform_columnHeader
-			// 
-			this.platform_columnHeader.Text = "Gleiss";
+			this.columnHeader12.Text = "Gleiss";
 			// 
 			// Form1
 			// 
@@ -296,9 +331,7 @@ namespace TransportApp_projekt
 			this.verbindungenTab.PerformLayout();
 			this.stationenTab.ResumeLayout(false);
 			this.stationenTab.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
 			this.verlaufTab.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -314,23 +347,30 @@ namespace TransportApp_projekt
 		private System.Windows.Forms.Label von_Label;
 		private System.Windows.Forms.TextBox nach_TextBox;
 		private System.Windows.Forms.TextBox von_TextBox;
-		private System.Windows.Forms.DataGridView dataGridView2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox textBox2;
-		private System.Windows.Forms.DataGridView dataGridView3;
-		private System.Windows.Forms.DataGridViewTextBoxColumn datetimeClm;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-		private System.Windows.Forms.ListView listView1;
+		private System.Windows.Forms.ListView conectionsView;
 		private System.Windows.Forms.ColumnHeader von_columnHeader;
 		private System.Windows.Forms.ColumnHeader Nach_columnsHeader;
 		private System.Windows.Forms.ColumnHeader duration_columnHeader;
 		private System.Windows.Forms.ColumnHeader arrival_columnHeader;
 		private System.Windows.Forms.ColumnHeader departure_columnHeader;
 		private System.Windows.Forms.ColumnHeader platform_columnHeader;
+		private System.Windows.Forms.ListView listView2;
+		private System.Windows.Forms.ColumnHeader columnHeader1;
+		private System.Windows.Forms.ColumnHeader columnHeader2;
+		private System.Windows.Forms.ColumnHeader columnHeader3;
+		private System.Windows.Forms.ColumnHeader columnHeader4;
+		private System.Windows.Forms.ColumnHeader columnHeader5;
+		private System.Windows.Forms.ColumnHeader columnHeader6;
+		private System.Windows.Forms.ListView listView3;
+		private System.Windows.Forms.ColumnHeader columnHeader7;
+		private System.Windows.Forms.ColumnHeader columnHeader8;
+		private System.Windows.Forms.ColumnHeader columnHeader9;
+		private System.Windows.Forms.ColumnHeader columnHeader10;
+		private System.Windows.Forms.ColumnHeader columnHeader11;
+		private System.Windows.Forms.ColumnHeader columnHeader12;
 	}
 }
 
