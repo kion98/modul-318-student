@@ -31,29 +31,26 @@ namespace TransportApp_projekt
 		{
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.verbindungenTab = new System.Windows.Forms.TabPage();
-			this.conectionsView = new System.Windows.Forms.ListView();
+			this.nach_ComboBox = new System.Windows.Forms.ComboBox();
+			this.von_ComboBox = new System.Windows.Forms.ComboBox();
+			this.connectionsView = new System.Windows.Forms.ListView();
 			this.von_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.Nach_columnsHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.duration_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.arrival_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.departure_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.arrival_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.platform_columnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.searchBtn = new System.Windows.Forms.Button();
 			this.nach_Label = new System.Windows.Forms.Label();
 			this.von_Label = new System.Windows.Forms.Label();
-			this.nach_TextBox = new System.Windows.Forms.TextBox();
-			this.von_TextBox = new System.Windows.Forms.TextBox();
 			this.stationenTab = new System.Windows.Forms.TabPage();
-			this.listView2 = new System.Windows.Forms.ListView();
-			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.station_ComboBox = new System.Windows.Forms.ComboBox();
+			this.stationsView = new System.Windows.Forms.ListView();
+			this.time_ColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.trainName_ColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.toStation_ColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.button1 = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
-			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.verlaufTab = new System.Windows.Forms.TabPage();
 			this.listView3 = new System.Windows.Forms.ListView();
 			this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -84,12 +81,12 @@ namespace TransportApp_projekt
 			// 
 			// verbindungenTab
 			// 
-			this.verbindungenTab.Controls.Add(this.conectionsView);
+			this.verbindungenTab.Controls.Add(this.nach_ComboBox);
+			this.verbindungenTab.Controls.Add(this.von_ComboBox);
+			this.verbindungenTab.Controls.Add(this.connectionsView);
 			this.verbindungenTab.Controls.Add(this.searchBtn);
 			this.verbindungenTab.Controls.Add(this.nach_Label);
 			this.verbindungenTab.Controls.Add(this.von_Label);
-			this.verbindungenTab.Controls.Add(this.nach_TextBox);
-			this.verbindungenTab.Controls.Add(this.von_TextBox);
 			this.verbindungenTab.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.verbindungenTab.Location = new System.Drawing.Point(4, 22);
 			this.verbindungenTab.Name = "verbindungenTab";
@@ -99,26 +96,44 @@ namespace TransportApp_projekt
 			this.verbindungenTab.Text = "Verbindungen";
 			this.verbindungenTab.UseVisualStyleBackColor = true;
 			// 
-			// conectionsView
+			// nach_ComboBox
 			// 
-			this.conectionsView.AllowColumnReorder = true;
-			this.conectionsView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.nach_ComboBox.FormattingEnabled = true;
+			this.nach_ComboBox.Location = new System.Drawing.Point(96, 80);
+			this.nach_ComboBox.Name = "nach_ComboBox";
+			this.nach_ComboBox.Size = new System.Drawing.Size(173, 21);
+			this.nach_ComboBox.TabIndex = 7;
+			this.nach_ComboBox.TextChanged += new System.EventHandler(this.onChange_Search_Stations);
+			// 
+			// von_ComboBox
+			// 
+			this.von_ComboBox.FormattingEnabled = true;
+			this.von_ComboBox.Location = new System.Drawing.Point(96, 53);
+			this.von_ComboBox.Name = "von_ComboBox";
+			this.von_ComboBox.Size = new System.Drawing.Size(173, 21);
+			this.von_ComboBox.TabIndex = 6;
+			this.von_ComboBox.TextChanged += new System.EventHandler(this.onChange_Search_Stations);
+			// 
+			// connectionsView
+			// 
+			this.connectionsView.AllowColumnReorder = true;
+			this.connectionsView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.conectionsView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+			this.connectionsView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.von_columnHeader,
             this.Nach_columnsHeader,
             this.duration_columnHeader,
             this.departure_columnHeader,
             this.arrival_columnHeader,
             this.platform_columnHeader});
-			this.conectionsView.Location = new System.Drawing.Point(8, 152);
-			this.conectionsView.Name = "conectionsView";
-			this.conectionsView.Size = new System.Drawing.Size(405, 264);
-			this.conectionsView.TabIndex = 5;
-			this.conectionsView.UseCompatibleStateImageBehavior = false;
-			this.conectionsView.View = System.Windows.Forms.View.Details;
-			this.conectionsView.SelectedIndexChanged += new System.EventHandler(this.conectionsView_SelectedIndexChanged);
+			this.connectionsView.Location = new System.Drawing.Point(8, 152);
+			this.connectionsView.Name = "connectionsView";
+			this.connectionsView.Size = new System.Drawing.Size(405, 264);
+			this.connectionsView.TabIndex = 5;
+			this.connectionsView.UseCompatibleStateImageBehavior = false;
+			this.connectionsView.View = System.Windows.Forms.View.Details;
+			this.connectionsView.SelectedIndexChanged += new System.EventHandler(this.conectionsView_SelectedIndexChanged);
 			// 
 			// von_columnHeader
 			// 
@@ -132,14 +147,13 @@ namespace TransportApp_projekt
 			// 
 			this.duration_columnHeader.Text = "Dauer";
 			// 
-			// arrival_columnHeader
-			// 
-			this.arrival_columnHeader.DisplayIndex = 3;
-			this.arrival_columnHeader.Text = "Ankunft";
-			// 
 			// departure_columnHeader
 			// 
 			this.departure_columnHeader.Text = "Abfahrt";
+			// 
+			// arrival_columnHeader
+			// 
+			this.arrival_columnHeader.Text = "Ankunft";
 			// 
 			// platform_columnHeader
 			// 
@@ -173,26 +187,12 @@ namespace TransportApp_projekt
 			this.von_Label.TabIndex = 2;
 			this.von_Label.Text = "Von:";
 			// 
-			// nach_TextBox
-			// 
-			this.nach_TextBox.Location = new System.Drawing.Point(96, 80);
-			this.nach_TextBox.Name = "nach_TextBox";
-			this.nach_TextBox.Size = new System.Drawing.Size(173, 20);
-			this.nach_TextBox.TabIndex = 1;
-			// 
-			// von_TextBox
-			// 
-			this.von_TextBox.Location = new System.Drawing.Point(96, 53);
-			this.von_TextBox.Name = "von_TextBox";
-			this.von_TextBox.Size = new System.Drawing.Size(173, 20);
-			this.von_TextBox.TabIndex = 0;
-			// 
 			// stationenTab
 			// 
-			this.stationenTab.Controls.Add(this.listView2);
+			this.stationenTab.Controls.Add(this.station_ComboBox);
+			this.stationenTab.Controls.Add(this.stationsView);
 			this.stationenTab.Controls.Add(this.button1);
 			this.stationenTab.Controls.Add(this.label2);
-			this.stationenTab.Controls.Add(this.textBox2);
 			this.stationenTab.Location = new System.Drawing.Point(4, 22);
 			this.stationenTab.Name = "stationenTab";
 			this.stationenTab.Padding = new System.Windows.Forms.Padding(3);
@@ -201,45 +201,46 @@ namespace TransportApp_projekt
 			this.stationenTab.Text = "Stationen";
 			this.stationenTab.UseVisualStyleBackColor = true;
 			// 
-			// listView2
+			// station_ComboBox
 			// 
-			this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
-			this.listView2.Location = new System.Drawing.Point(8, 164);
-			this.listView2.Name = "listView2";
-			this.listView2.Size = new System.Drawing.Size(405, 97);
-			this.listView2.TabIndex = 12;
-			this.listView2.UseCompatibleStateImageBehavior = false;
-			this.listView2.View = System.Windows.Forms.View.Details;
+			this.station_ComboBox.FormattingEnabled = true;
+			this.station_ComboBox.Location = new System.Drawing.Point(109, 61);
+			this.station_ComboBox.Name = "station_ComboBox";
+			this.station_ComboBox.Size = new System.Drawing.Size(164, 21);
+			this.station_ComboBox.TabIndex = 13;
+			this.station_ComboBox.TextUpdate += new System.EventHandler(this.onChange_Search_Stations);
 			// 
-			// columnHeader1
+			// stationsView
 			// 
-			this.columnHeader1.Text = "Von";
+			this.stationsView.AllowColumnReorder = true;
+			this.stationsView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.stationsView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.time_ColumnHeader,
+            this.trainName_ColumnHeader,
+            this.toStation_ColumnHeader});
+			this.stationsView.Location = new System.Drawing.Point(8, 164);
+			this.stationsView.Name = "stationsView";
+			this.stationsView.Size = new System.Drawing.Size(405, 252);
+			this.stationsView.TabIndex = 12;
+			this.stationsView.UseCompatibleStateImageBehavior = false;
+			this.stationsView.View = System.Windows.Forms.View.Details;
 			// 
-			// columnHeader2
+			// time_ColumnHeader
 			// 
-			this.columnHeader2.Text = "Nach";
+			this.time_ColumnHeader.Text = "Zeit";
+			this.time_ColumnHeader.Width = 50;
 			// 
-			// columnHeader3
+			// trainName_ColumnHeader
 			// 
-			this.columnHeader3.Text = "Dauer";
+			this.trainName_ColumnHeader.Text = "Zug";
+			this.trainName_ColumnHeader.Width = 100;
 			// 
-			// columnHeader4
+			// toStation_ColumnHeader
 			// 
-			this.columnHeader4.Text = "Ankunft";
-			// 
-			// columnHeader5
-			// 
-			this.columnHeader5.Text = "Abfahrt";
-			// 
-			// columnHeader6
-			// 
-			this.columnHeader6.Text = "Gleiss";
+			this.toStation_ColumnHeader.Text = "Nach";
+			this.toStation_ColumnHeader.Width = 201;
 			// 
 			// button1
 			// 
@@ -249,6 +250,7 @@ namespace TransportApp_projekt
 			this.button1.TabIndex = 10;
 			this.button1.Text = "Suchen";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.onClick_Stationboard_search);
 			// 
 			// label2
 			// 
@@ -258,13 +260,6 @@ namespace TransportApp_projekt
 			this.label2.Size = new System.Drawing.Size(43, 13);
 			this.label2.TabIndex = 8;
 			this.label2.Text = "Station:";
-			// 
-			// textBox2
-			// 
-			this.textBox2.Location = new System.Drawing.Point(109, 61);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(173, 20);
-			this.textBox2.TabIndex = 6;
 			// 
 			// verlaufTab
 			// 
@@ -345,25 +340,16 @@ namespace TransportApp_projekt
 		private System.Windows.Forms.Button searchBtn;
 		private System.Windows.Forms.Label nach_Label;
 		private System.Windows.Forms.Label von_Label;
-		private System.Windows.Forms.TextBox nach_TextBox;
-		private System.Windows.Forms.TextBox von_TextBox;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox textBox2;
-		private System.Windows.Forms.ListView conectionsView;
+		private System.Windows.Forms.ListView connectionsView;
 		private System.Windows.Forms.ColumnHeader von_columnHeader;
 		private System.Windows.Forms.ColumnHeader Nach_columnsHeader;
 		private System.Windows.Forms.ColumnHeader duration_columnHeader;
 		private System.Windows.Forms.ColumnHeader arrival_columnHeader;
 		private System.Windows.Forms.ColumnHeader departure_columnHeader;
 		private System.Windows.Forms.ColumnHeader platform_columnHeader;
-		private System.Windows.Forms.ListView listView2;
-		private System.Windows.Forms.ColumnHeader columnHeader1;
-		private System.Windows.Forms.ColumnHeader columnHeader2;
-		private System.Windows.Forms.ColumnHeader columnHeader3;
-		private System.Windows.Forms.ColumnHeader columnHeader4;
-		private System.Windows.Forms.ColumnHeader columnHeader5;
-		private System.Windows.Forms.ColumnHeader columnHeader6;
+		private System.Windows.Forms.ListView stationsView;
 		private System.Windows.Forms.ListView listView3;
 		private System.Windows.Forms.ColumnHeader columnHeader7;
 		private System.Windows.Forms.ColumnHeader columnHeader8;
@@ -371,6 +357,12 @@ namespace TransportApp_projekt
 		private System.Windows.Forms.ColumnHeader columnHeader10;
 		private System.Windows.Forms.ColumnHeader columnHeader11;
 		private System.Windows.Forms.ColumnHeader columnHeader12;
+		private System.Windows.Forms.ComboBox von_ComboBox;
+		private System.Windows.Forms.ComboBox nach_ComboBox;
+		private System.Windows.Forms.ComboBox station_ComboBox;
+		private System.Windows.Forms.ColumnHeader time_ColumnHeader;
+		private System.Windows.Forms.ColumnHeader trainName_ColumnHeader;
+		private System.Windows.Forms.ColumnHeader toStation_ColumnHeader;
 	}
 }
 

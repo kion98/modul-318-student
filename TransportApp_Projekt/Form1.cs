@@ -30,7 +30,7 @@ namespace TransportApp_projekt
 
 		private void Search_Click(object sender, EventArgs e)
 		{
-		GetConnections(von_TextBox.Text, nach_TextBox.Text);
+		GetConnections(von_ComboBox.Text, nach_ComboBox.Text);
 		}
 
 		private void GetConnections(string Von, string Nach)
@@ -40,20 +40,16 @@ namespace TransportApp_projekt
 			int itemIndex = 0;
 
 			foreach(var connection in connections)
-			{
-				
+			{		
 				string von = connection.From.Station.Name;
 				string nach = connection.To.Station.Name;
-				string dauer = TimeSpan.Parse
-					(
+				string dauer = TimeSpan.Parse(
 					connection.Duration.Substring(3)
 					).TotalMinutes.ToString();
-				string abfahrt = DateTime.Parse
-					(
+				string abfahrt = DateTime.Parse(
 					connection.From.Departure
 					).ToShortTimeString();
-				string ankunft = DateTime.Parse
-					(
+				string ankunft = DateTime.Parse(
 					connection.To.Arrival
 					).ToShortTimeString();
 				string gleiss = connection.From.Platform;
@@ -68,7 +64,7 @@ namespace TransportApp_projekt
 				listItems[itemIndex] = item;
 				itemIndex++;
 			}
-			conectionsView.Items.AddRange(listItems);
+			connectionsView.Items.AddRange(listItems);
 		}
 
 		private void Tab_change(object sender, TabControlCancelEventArgs e)
@@ -83,14 +79,45 @@ namespace TransportApp_projekt
 
 
 
-		private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		private void conectionsView_SelectedIndexChanged(object sender, EventArgs e)
 		{
 
 		}
 
-		private void conectionsView_SelectedIndexChanged(object sender, EventArgs e)
+		private void onChange_Search_Stations(object sender, EventArgs e)
 		{
+			ComboBox comboBox = (ComboBox)sender;
+			var vorschlaege = transport.GetStations(comboBox.Text).StationList;
 
+			comboBox.Items.Clear();
+			comboBox.SelectionStart = comboBox.Text.Length;
+			
+
+			foreach(Station vorschlag in vorschlaege)
+				comboBox.Items.Add(vorschlag.Name);
+		}
+		private void onClick_Stationboard_search(object sender, EventArgs e)
+		{
+			var stationboard= transport.GetStationBoard(station_ComboBox.Text,"");
+			var	stationentries = stationboard.Entries;
+
+			station_ComboBox.Text = stationboard.Station.Name;
+			ListViewItem[] items= new ListViewItem[stationentries.Count];
+
+			for(int i = 0; i < stationentries.Count; i++)
+			{
+				var route = stationentries[i];
+				string zeit = route.Stop.Departure.ToShortTimeString();
+				string zug = route.Name;
+				string nach = route.To;
+
+				ListViewItem item = new ListViewItem(zeit);
+				item.SubItems.Add(zug);
+				item.SubItems.Add(nach);
+
+				items[i] = item;
+			}
+			stationsView.Items.AddRange(items);
 		}
 	}
 }
