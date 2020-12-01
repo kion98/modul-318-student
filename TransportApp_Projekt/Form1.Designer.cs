@@ -103,7 +103,7 @@ namespace TransportApp_projekt
 			this.nach_ComboBox.Name = "nach_ComboBox";
 			this.nach_ComboBox.Size = new System.Drawing.Size(173, 21);
 			this.nach_ComboBox.TabIndex = 7;
-			this.nach_ComboBox.TextChanged += new System.EventHandler(this.onChange_Search_Stations);
+			this.nach_ComboBox.TextUpdate += new System.EventHandler(this.onChange_Search_Stations);
 			// 
 			// von_ComboBox
 			// 
@@ -112,7 +112,7 @@ namespace TransportApp_projekt
 			this.von_ComboBox.Name = "von_ComboBox";
 			this.von_ComboBox.Size = new System.Drawing.Size(173, 21);
 			this.von_ComboBox.TabIndex = 6;
-			this.von_ComboBox.TextChanged += new System.EventHandler(this.onChange_Search_Stations);
+			this.von_ComboBox.TextUpdate += new System.EventHandler(this.onChange_Search_Stations);
 			// 
 			// connectionsView
 			// 

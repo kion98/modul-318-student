@@ -35,6 +35,7 @@ namespace TransportApp_projekt
 
 		private void GetConnections(string Von, string Nach)
 		{
+			connectionsView.Items.Clear();
 			var connections=transport.GetConnections(Von, Nach).ConnectionList;
 			ListViewItem[] listItems = new ListViewItem[connections.Count];
 			int itemIndex = 0;
@@ -87,14 +88,18 @@ namespace TransportApp_projekt
 		private void onChange_Search_Stations(object sender, EventArgs e)
 		{
 			ComboBox comboBox = (ComboBox)sender;
+			comboBox.Items.Clear();
 			var vorschlaege = transport.GetStations(comboBox.Text).StationList;
 
-			comboBox.Items.Clear();
-			comboBox.SelectionStart = comboBox.Text.Length;
-			
 
-			foreach(Station vorschlag in vorschlaege)
-				comboBox.Items.Add(vorschlag.Name);
+			foreach (Station vorschlag in vorschlaege)
+			{
+				if (!string.IsNullOrEmpty(vorschlag.Name))
+				{
+					comboBox.Items.Add(vorschlag.Name);
+				}
+			}
+			comboBox.SelectionStart = comboBox.Text.Length;
 		}
 		private void onClick_Stationboard_search(object sender, EventArgs e)
 		{
