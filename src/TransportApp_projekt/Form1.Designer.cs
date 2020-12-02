@@ -343,7 +343,7 @@ namespace TransportApp_projekt
 		private System.Windows.Forms.Label von_Label;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.ListView connectionsView;
+		public System.Windows.Forms.ListView connectionsView;
 		private System.Windows.Forms.ColumnHeader von_columnHeader;
 		private System.Windows.Forms.ColumnHeader Nach_columnsHeader;
 		private System.Windows.Forms.ColumnHeader duration_columnHeader;
@@ -351,8 +351,8 @@ namespace TransportApp_projekt
 		private System.Windows.Forms.ColumnHeader departure_columnHeader;
 		private System.Windows.Forms.ColumnHeader platform_columnHeader;
 		private System.Windows.Forms.ListView stationsView;
-		private System.Windows.Forms.ComboBox von_ComboBox;
-		private System.Windows.Forms.ComboBox nach_ComboBox;
+		public System.Windows.Forms.ComboBox von_ComboBox;
+		public System.Windows.Forms.ComboBox nach_ComboBox;
 		private System.Windows.Forms.ComboBox station_ComboBox;
 		private System.Windows.Forms.ColumnHeader time_ColumnHeader;
 		private System.Windows.Forms.ColumnHeader trainName_ColumnHeader;
