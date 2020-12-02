@@ -52,13 +52,13 @@ namespace TransportApp_projekt
 			this.button1 = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.verlaufTab = new System.Windows.Forms.TabPage();
-			this.listView3 = new System.Windows.Forms.ListView();
-			this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.historyView = new System.Windows.Forms.ListView();
+			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.tabControl1.SuspendLayout();
 			this.verbindungenTab.SuspendLayout();
 			this.stationenTab.SuspendLayout();
@@ -76,8 +76,6 @@ namespace TransportApp_projekt
 			this.tabControl1.SelectedIndex = 0;
 			this.tabControl1.Size = new System.Drawing.Size(429, 450);
 			this.tabControl1.TabIndex = 0;
-			this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.Tab_change);
-			this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
 			// 
 			// verbindungenTab
 			// 
@@ -133,7 +131,6 @@ namespace TransportApp_projekt
 			this.connectionsView.TabIndex = 5;
 			this.connectionsView.UseCompatibleStateImageBehavior = false;
 			this.connectionsView.View = System.Windows.Forms.View.Details;
-			this.connectionsView.SelectedIndexChanged += new System.EventHandler(this.conectionsView_SelectedIndexChanged);
 			// 
 			// von_columnHeader
 			// 
@@ -263,7 +260,7 @@ namespace TransportApp_projekt
 			// 
 			// verlaufTab
 			// 
-			this.verlaufTab.Controls.Add(this.listView3);
+			this.verlaufTab.Controls.Add(this.historyView);
 			this.verlaufTab.Location = new System.Drawing.Point(4, 22);
 			this.verlaufTab.Name = "verlaufTab";
 			this.verlaufTab.Padding = new System.Windows.Forms.Padding(3);
@@ -272,45 +269,49 @@ namespace TransportApp_projekt
 			this.verlaufTab.Text = "Verlauf";
 			this.verlaufTab.UseVisualStyleBackColor = true;
 			// 
-			// listView3
+			// historyView
 			// 
-			this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9,
-            this.columnHeader10,
-            this.columnHeader11,
-            this.columnHeader12});
-			this.listView3.Location = new System.Drawing.Point(6, 51);
-			this.listView3.Name = "listView3";
-			this.listView3.Size = new System.Drawing.Size(405, 97);
-			this.listView3.TabIndex = 6;
-			this.listView3.UseCompatibleStateImageBehavior = false;
-			this.listView3.View = System.Windows.Forms.View.Details;
+			this.historyView.AllowColumnReorder = true;
+			this.historyView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.historyView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
+			this.historyView.Location = new System.Drawing.Point(8, 6);
+			this.historyView.Name = "historyView";
+			this.historyView.Size = new System.Drawing.Size(405, 410);
+			this.historyView.TabIndex = 6;
+			this.historyView.UseCompatibleStateImageBehavior = false;
+			this.historyView.View = System.Windows.Forms.View.Details;
 			// 
-			// columnHeader7
+			// columnHeader1
 			// 
-			this.columnHeader7.Text = "Von";
+			this.columnHeader1.Text = "Von";
 			// 
-			// columnHeader8
+			// columnHeader2
 			// 
-			this.columnHeader8.Text = "Nach";
+			this.columnHeader2.Text = "Nach";
 			// 
-			// columnHeader9
+			// columnHeader3
 			// 
-			this.columnHeader9.Text = "Dauer";
+			this.columnHeader3.Text = "Dauer";
 			// 
-			// columnHeader10
+			// columnHeader4
 			// 
-			this.columnHeader10.Text = "Ankunft";
+			this.columnHeader4.Text = "Abfahrt";
 			// 
-			// columnHeader11
+			// columnHeader5
 			// 
-			this.columnHeader11.Text = "Abfahrt";
+			this.columnHeader5.Text = "Ankunft";
 			// 
-			// columnHeader12
+			// columnHeader6
 			// 
-			this.columnHeader12.Text = "Gleiss";
+			this.columnHeader6.Text = "Gleiss";
 			// 
 			// Form1
 			// 
@@ -350,19 +351,19 @@ namespace TransportApp_projekt
 		private System.Windows.Forms.ColumnHeader departure_columnHeader;
 		private System.Windows.Forms.ColumnHeader platform_columnHeader;
 		private System.Windows.Forms.ListView stationsView;
-		private System.Windows.Forms.ListView listView3;
-		private System.Windows.Forms.ColumnHeader columnHeader7;
-		private System.Windows.Forms.ColumnHeader columnHeader8;
-		private System.Windows.Forms.ColumnHeader columnHeader9;
-		private System.Windows.Forms.ColumnHeader columnHeader10;
-		private System.Windows.Forms.ColumnHeader columnHeader11;
-		private System.Windows.Forms.ColumnHeader columnHeader12;
 		private System.Windows.Forms.ComboBox von_ComboBox;
 		private System.Windows.Forms.ComboBox nach_ComboBox;
 		private System.Windows.Forms.ComboBox station_ComboBox;
 		private System.Windows.Forms.ColumnHeader time_ColumnHeader;
 		private System.Windows.Forms.ColumnHeader trainName_ColumnHeader;
 		private System.Windows.Forms.ColumnHeader toStation_ColumnHeader;
+		private System.Windows.Forms.ListView historyView;
+		private System.Windows.Forms.ColumnHeader columnHeader1;
+		private System.Windows.Forms.ColumnHeader columnHeader2;
+		private System.Windows.Forms.ColumnHeader columnHeader3;
+		private System.Windows.Forms.ColumnHeader columnHeader4;
+		private System.Windows.Forms.ColumnHeader columnHeader5;
+		private System.Windows.Forms.ColumnHeader columnHeader6;
 	}
 }
 

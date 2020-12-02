@@ -18,8 +18,6 @@ namespace TransportApp_projekt
 		public Form1()
 		{
 			InitializeComponent();
-
-
 		}
 
 		private void Form1_Load(object sender, EventArgs e)
@@ -36,12 +34,13 @@ namespace TransportApp_projekt
 		private void GetConnections(string Von, string Nach)
 		{
 			connectionsView.Items.Clear();
-			var connections=transport.GetConnections(Von, Nach).ConnectionList;
+			try { 
+			var connections = transport.GetConnections(Von, Nach).ConnectionList;
 			ListViewItem[] listItems = new ListViewItem[connections.Count];
 			int itemIndex = 0;
 
-			foreach(var connection in connections)
-			{		
+			foreach (var connection in connections)
+			{
 				string von = connection.From.Station.Name;
 				string nach = connection.To.Station.Name;
 				string dauer = TimeSpan.Parse(
@@ -66,23 +65,16 @@ namespace TransportApp_projekt
 				itemIndex++;
 			}
 			connectionsView.Items.AddRange(listItems);
-		}
-
-		private void Tab_change(object sender, TabControlCancelEventArgs e)
-		{
-			Console.WriteLine(e.TabPage.Name);
-		}
-
-		private void tabControl1_Selected(object sender, TabControlEventArgs e)
-		{
-
-		}
-
-
-
-		private void conectionsView_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
+		}catch(Exception e)
+			{
+				MessageBox.Show
+					(
+					e.Message,
+					"Fehler",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Error
+					);
+			}
 		}
 
 		private void onChange_Search_Stations(object sender, EventArgs e)
@@ -103,6 +95,7 @@ namespace TransportApp_projekt
 		}
 		private void onClick_Stationboard_search(object sender, EventArgs e)
 		{
+			stationsView.Items.Clear();
 			var stationboard= transport.GetStationBoard(station_ComboBox.Text,"");
 			var	stationentries = stationboard.Entries;
 
