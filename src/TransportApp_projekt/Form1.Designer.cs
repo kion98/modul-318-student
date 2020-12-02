@@ -320,7 +320,7 @@ namespace TransportApp_projekt
 			this.ClientSize = new System.Drawing.Size(429, 450);
 			this.Controls.Add(this.tabControl1);
 			this.Name = "Form1";
-			this.Text = "Form1";
+			this.Text = "TransportApp";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.tabControl1.ResumeLayout(false);
 			this.verbindungenTab.ResumeLayout(false);

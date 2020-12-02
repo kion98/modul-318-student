@@ -66,11 +66,11 @@ namespace TransportApp_projekt
 			}
 			
 			connectionsView.Items.AddRange(listItems);
-		}catch(Exception e)
+		}catch
 			{
 				MessageBox.Show
 					(
-					e.Message,
+					"Konnte keine Verbindung finden.",
 					"Fehler",
 					MessageBoxButtons.OK,
 					MessageBoxIcon.Error
@@ -80,6 +80,7 @@ namespace TransportApp_projekt
 
 		public void onChange_Search_Stations(object sender, EventArgs e)
 		{
+			
 			ComboBox comboBox = (ComboBox)sender;
 			comboBox.Items.Clear();
 			var vorschlaege = transport.GetStations(comboBox.Text).StationList;
@@ -97,13 +98,14 @@ namespace TransportApp_projekt
 		private void onClick_Stationboard_search(object sender, EventArgs e)
 		{
 			stationsView.Items.Clear();
-			var stationboard= transport.GetStationBoard(station_ComboBox.Text,"");
-			var	stationentries = stationboard.Entries;
+			try { 
+			var stationboard = transport.GetStationBoard(station_ComboBox.Text, "");
+			var stationentries = stationboard.Entries;
 
 			station_ComboBox.Text = stationboard.Station.Name;
-			ListViewItem[] items= new ListViewItem[stationentries.Count];
+			ListViewItem[] items = new ListViewItem[stationentries.Count];
 
-			for(int i = 0; i < stationentries.Count; i++)
+			for (int i = 0; i < stationentries.Count; i++)
 			{
 				var route = stationentries[i];
 				string zeit = route.Stop.Departure.ToShortTimeString();
@@ -117,6 +119,17 @@ namespace TransportApp_projekt
 				items[i] = item;
 			}
 			stationsView.Items.AddRange(items);
+		}
+			catch 
+			{
+				MessageBox.Show
+					(
+					"Konnte keine Verbindung finden.",
+					"Fehler",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Error
+					);
+			}
 		}
 	}
 }
