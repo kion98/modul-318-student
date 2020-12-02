@@ -31,7 +31,7 @@ namespace TransportApp_projekt
 		GetConnections(von_ComboBox.Text, nach_ComboBox.Text);
 		}
 
-		private void GetConnections(string Von, string Nach)
+		public void GetConnections(string Von, string Nach)
 		{
 			connectionsView.Items.Clear();
 			try { 
@@ -64,6 +64,7 @@ namespace TransportApp_projekt
 				listItems[itemIndex] = item;
 				itemIndex++;
 			}
+			
 			connectionsView.Items.AddRange(listItems);
 		}catch(Exception e)
 			{
@@ -77,7 +78,7 @@ namespace TransportApp_projekt
 			}
 		}
 
-		private void onChange_Search_Stations(object sender, EventArgs e)
+		public void onChange_Search_Stations(object sender, EventArgs e)
 		{
 			ComboBox comboBox = (ComboBox)sender;
 			comboBox.Items.Clear();
